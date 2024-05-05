@@ -1,0 +1,19 @@
+<ng-container *ngIf="shown">
+    <mat-card class="user-info-card">
+        <mat-card-header>
+            <mat-card-title>{{ displayedUserInfo["name"]["title"] }} {{ displayedUserInfo["name"]["first"] }} {{ displayedUserInfo["name"]["last"] }}</mat-card-title>
+            <mat-card-subtitle>{{ displayedUserInfo["location"]["city"] }}, {{ displayedUserInfo["location"]["country"] }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div style="display: flex;">
+                <a><img class="portrait" src="{{displayedUserInfo['pictures']['large']}}"></a>
+                <div>
+                    <app-single-info [color]="'#7A7265'" [title]="'E-Mail'" [text]="displayedUserInfo['email']"/>
+                    <app-single-info [color]="'#C69C72'" [title]="'Phone'" [text]="displayedUserInfo['phone']"/>
+                    <app-single-info [color]="'#C0B7B1'" [title]="'Age'" [text]="displayedUserInfo['age']"/>
+                    <app-single-info [color]="'#8E6E53'" [title]="'Gender'" [text]="displayedUserInfo['gender']"/>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</ng-container>

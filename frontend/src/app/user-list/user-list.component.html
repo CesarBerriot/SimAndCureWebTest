@@ -1,0 +1,36 @@
+<!-- if data received -->
+<ng-template [ngIf]="fetchedData != null" [ngIfElse]="placeholder">
+  <!-- table -->
+  <table  mat-table [dataSource]="matListDataSource">
+    <ng-container [matColumnDef]="column" *ngFor="let column of columnLabels">
+      <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+      <td mat-cell (click)="rowClicked(user)" *matCellDef="let user">
+        <ng-template [ngIf]="column == 'Picture'" [ngIfElse]="default">
+          <img src="{{ user[columnIDs[columnLabels.indexOf(column)]] }}">
+        </ng-template>
+        <ng-template #default>
+          {{ user[columnIDs[columnLabels.indexOf(column)]] }}
+        </ng-template>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columnLabels"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnLabels "></tr>
+  </table>
+  <!-- paginator -->
+  <mat-paginator #paginator
+                 (page)="selectedPageChanged($event)"
+                 [length]="simpleUserList.length"
+                 [pageSize]="5"
+                 [showFirstLastButtons]="true"
+                 [hidePageSize]="true">
+  </mat-paginator>
+  <!-- user info -->
+  <app-user-info #userInfo [shown]="showSelectedUserInfo"/>
+</ng-template>
+<!-- else -->
+<ng-template #placeholder>
+  <div id="placeholderDiv">
+    <h1 style="text-align: center;">Fetching Users...</h1>
+    <mat-spinner style="margin: auto;"></mat-spinner>
+  </div>
+</ng-template>

@@ -1,0 +1,22 @@
+:host {
+  display: block;
+  height: 35px;
+}
+
+mat-card {
+  width: 100px;
+  height: 30px;
+}
+
+#content {
+  padding-top: 0px;
+}
+
+.title {
+  color: white;
+  text-align: center;
+}
+
+.text {
+  padding-left: 10px;
+}

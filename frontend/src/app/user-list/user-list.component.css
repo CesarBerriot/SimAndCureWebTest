@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+img {
+  height: 30px;
+  border-radius: 10px;
+}
+
+mat-paginator {
+  width: 350px; 
+  margin-right: auto; 
+  margin-left: auto;
+}
+
+#placeholderDiv {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}

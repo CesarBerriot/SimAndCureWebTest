@@ -1,0 +1,19 @@
+:host {
+  display: block;
+}
+
+.portrait {
+  border-radius: 55px;
+  padding-right: 10px;
+}
+
+.user-info-card {
+  width: 700px;
+  border-radius: 40px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+app-single-info {
+  padding: 0;
+}
